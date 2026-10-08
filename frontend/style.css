@@ -1,0 +1,1292 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #dfdfdf;
+    flex-direction: column;
+}
+
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.navbar .logo {
+    color: #f1c40f;
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar .nav-links li {
+    list-style: none;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Zoom hover effect */
+.navbar .nav-links a:hover {
+    color: #f1c40f;
+    transform: scale(1.1);
+}
+
+/* Signup Box */
+.login-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 440px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 80px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.login-header header {
+    color: #333;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* Input field styling */
+.input-box .input-field {
+    width: 100%;
+    height: 60px;
+    font-size: 17px;
+    padding: 0 25px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05);
+    outline: none;
+    transition: .3s;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* Beautified Dropdown styling */
+.input-box select {
+    width: 100%;
+    height: 60px;
+    font-size: 17px;
+    padding: 0 25px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05);
+    outline: none;
+    transition: .3s;
+    background: #f9f9f9;
+    color: #333;
+    appearance: none;
+    cursor: pointer;
+    font-weight: 500;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 20px;
+}
+
+/* Enhanced Dropdown Options */
+.input-box select option {
+    background: #fff;
+    color: #333;
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 500;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dropdown option hover effect */
+.input-box select option:hover {
+    background: #f1c40f;
+    color: #222;
+}
+
+/* Dropdown focus effect */
+.input-box select:focus {
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Placeholder style */
+::placeholder {
+    font-weight: 500;
+    color: #222;
+}
+
+.input-field:focus {
+    width: 105%;
+}
+
+.input-submit {
+    position: relative;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+    color: white;
+    font-size: 18px;
+}
+
+.submit-btn:hover {
+    background: #000;
+    transform: scale(1.05, 1);
+}
+
+.sign-up-link {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.sign-up-link a {
+    color: #000;
+    font-weight: 600;
+}
+
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.loading-dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #d6f539;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite ease-in-out;
+}
+
+.loading-dots .dot:nth-child(1) {
+    animation-delay: -0.3s;
+}
+
+.loading-dots .dot:nth-child(2) {
+    animation-delay: -0.15s;
+}
+
+/* Loading state button styles */
+.submit-btn.loading,
+.apply-btn.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+}
+
+.success {
+    background-color: #28a745 !important;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Toast notification styles */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    width: 350px;
+    max-width: 100%;
+    color: white;
+}
+
+.toast.success {
+    background-color: #28a745;
+}
+
+.toast.error {
+    background-color: #dc3545;
+}
+
+.toast.info {
+    background-color: #ffc107;
+    color: #333;
+}
+
+/* Toast close button */
+.toast .close-btn {
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Toast progress bar */
+.toast .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    transition: width linear;
+}
+
+/* Jobs page styling */
+.dashboard {
+    max-width: 1000px;
+    width: 100%;
+    margin: 80px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.dashboard h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.search-container .input-field {
+    width: 60%;
+    height: 50px;
+    font-size: 18px;
+    padding: 0 20px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05);
+    outline: none;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.search-container .submit-btn {
+    width: 150px;
+    height: 50px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.search-container .submit-btn:hover {
+    background: #000;
+    transform: scale(1.05);
+}
+
+/* Scrollable job listings container */
+.jobs-container {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+/* Individual job card styling */
+.job-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease-in-out;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.job-card h3 {
+    color: #222;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.job-card p {
+    color: #555;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.job-card .apply-btn {
+    width: 100%;
+    height: 45px;
+    background: #f1c40f;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    transition: .3s ease-in-out;
+}
+
+.job-card .apply-btn:hover {
+    background: #d4ac0d;
+    transform: scale(1.05);
+}
+
+/* Scrollbar customization */
+.jobs-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.jobs-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.jobs-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.jobs-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Applied Jobs Page Styling */
+.applied-jobs-container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 80px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.applied-jobs-container h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+.applied-job-listings {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+/* Scrollbar customization */
+.applied-job-listings::-webkit-scrollbar {
+    width: 8px;
+}
+
+.applied-job-listings::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.applied-job-listings::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.applied-job-listings::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Withdraw button styles */
+.withdraw-btn {
+    width: 100%;
+    height: 45px;
+    background: #dc3545;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    transition: .3s ease-in-out;
+}
+
+.withdraw-btn:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+/* Withdraw button loading state */
+.withdraw-btn.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+/* Applied job card styling */
+.applied-job-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease-in-out;
+}
+
+.applied-job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.applied-job-card h3 {
+    color: #222;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.applied-job-card p {
+    color: #555;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Post Job Page Styling */
+.job-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.job-form input,
+.job-form textarea,
+.job-form select {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    padding: 0 20px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05);
+    outline: none;
+    transition: 0.3s;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* Textarea styling */
+.job-form textarea {
+    height: 120px;
+    padding: 20px;
+    resize: none;
+}
+
+/* Focus effect for inputs */
+.job-form input:focus,
+.job-form textarea:focus,
+.job-form select:focus {
+    width: 102%;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Submit button styling */
+.job-form .submit-btn {
+    width: 100%;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.job-form .submit-btn:hover {
+    background: #000;
+    transform: scale(1.05);
+}
+
+/* Loading animation for submit button */
+.job-form .submit-btn.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+/* Loading dots for submit button */
+.job-form .loading-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.job-form .loading-dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #f1c40f;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite ease-in-out;
+}
+
+.job-form .loading-dots .dot:nth-child(1) {
+    animation-delay: -0.3s;
+}
+
+.job-form .loading-dots .dot:nth-child(2) {
+    animation-delay: -0.15s;
+}
+
+/* Animation for loading dots */
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .job-form {
+        padding: 20px;
+    }
+
+    .job-form input,
+    .job-form textarea,
+    .job-form select {
+        font-size: 16px;
+    }
+
+    .job-form .submit-btn {
+        font-size: 18px;
+    }
+}
+
+/* Updated Styling for Form Fields with Labels on Left */
+.job-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Row - Label and Input Alignment */
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Label Styling */
+.job-form label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    min-width: 150px;
+    text-align: right;
+}
+
+/* Input, Textarea, and Select Fields */
+.job-form input,
+.job-form textarea,
+.job-form select {
+    flex: 1;
+    height: 50px;
+    font-size: 18px;
+    padding: 0 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* Textarea Styling */
+.job-form textarea {
+    height: 120px;
+    padding: 15px;
+    resize: none;
+}
+
+/* Focus effect for form elements */
+.job-form input:focus,
+.job-form textarea:focus,
+.job-form select:focus {
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f1c40f;
+}
+
+/* Button Container */
+.job-form .input-submit {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Submit Button Styling */
+.job-form .submit-btn {
+    width: 100%;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.job-form .submit-btn:hover {
+    background: #000;
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-form label {
+        text-align: left;
+    }
+}
+
+/* Updated Form Styling for Label Alignment */
+.job-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Group - Ensures label and input alignment */
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Label Styling with consistent width and alignment */
+.job-form label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    min-width: 200px;
+    text-align: left;
+}
+
+/* Input, Textarea, and Select Fields */
+.job-form input,
+.job-form textarea,
+.job-form select {
+    flex: 1;
+    height: 50px;
+    font-size: 18px;
+    padding: 0 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* Textarea Styling */
+.job-form textarea {
+    height: 120px;
+    padding: 15px;
+    resize: none;
+}
+
+/* Focus effect for form elements */
+.job-form input:focus,
+.job-form textarea:focus,
+.job-form select:focus {
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f1c40f;
+}
+
+/* Button Container */
+.job-form .input-submit {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Submit Button Styling */
+.job-form .submit-btn {
+    width: 100%;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.job-form .submit-btn:hover {
+    background: #000;
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-form label {
+        text-align: left;
+        min-width: 100%;
+    }
+}
+
+/* Manage Jobs Page Styling */
+.jobs-container {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+/* Individual job card styling */
+.manage-job-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Hover effect for job cards */
+.manage-job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Job card headings */
+.manage-job-card h3 {
+    color: #222;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Job card details */
+.manage-job-card p {
+    color: #555;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Edit and Delete buttons */
+.manage-job-card .btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.manage-job-card .edit-btn,
+.manage-job-card .delete-btn {
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+/* Edit button styles */
+.manage-job-card .edit-btn {
+    background: #f1c40f;
+    color: #222;
+}
+
+.manage-job-card .edit-btn:hover {
+    background: #d4ac0d;
+    transform: scale(1.05);
+}
+
+/* Delete button styles */
+.manage-job-card .delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.manage-job-card .delete-btn:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+/* No jobs message styling */
+.no-jobs-message {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Loading text styling */
+.loading-text {
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .manage-job-card .btn-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .manage-job-card .edit-btn,
+    .manage-job-card .delete-btn {
+        width: 100%;
+    }
+}
+
+/* Button group styling */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Edit and Delete button styles */
+.edit-btn,
+.delete-btn {
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+/* Edit button */
+.edit-btn {
+    background: #f1c40f;
+    color: #222;
+}
+
+.edit-btn:hover {
+    background: #d4ac0d;
+    transform: scale(1.05);
+}
+
+/* Delete button */
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+/* Button loading state */
+.edit-btn.loading,
+.delete-btn.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+/* Loading animation for buttons */
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.loading-dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite ease-in-out;
+}
+
+.loading-dots .dot:nth-child(1) {
+    animation-delay: -0.3s;
+}
+
+.loading-dots .dot:nth-child(2) {
+    animation-delay: -0.15s;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Application Management Page Styling */
+.applications-container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 80px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Heading style */
+.applications-container h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Scrollable applications listing container */
+.application-listings {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+/* Scrollbar customization */
+.application-listings::-webkit-scrollbar {
+    width: 8px;
+}
+
+.application-listings::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.application-listings::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.application-listings::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Individual application card styling */
+.application-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Hover effect */
+.application-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Application card text styling */
+.application-card h3 {
+    color: #222;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.application-card p {
+    color: #555;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Status badge styles */
+.application-card .status {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: capitalize;
+}
+
+/* Accepted status badge */
+.application-card .status.accepted {
+    background: #28a745;
+    color: #fff;
+}
+
+/* Rejected status badge */
+.application-card .status.rejected {
+    background: #dc3545;
+    color: #fff;
+}
+
+/* Pending status badge */
+.application-card .status.pending {
+    background: #f1c40f;
+    color: #222;
+}
+
+/* Accept and Reject buttons styling */
+.application-card .btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.application-card .accept-btn,
+.application-card .reject-btn {
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+/* Accept button styles */
+.application-card .accept-btn {
+    background: #28a745;
+    color: white;
+}
+
+.application-card .accept-btn:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+/* Reject button styles */
+.application-card .reject-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.application-card .reject-btn:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+/* Loading state for buttons */
+.accept-btn.loading,
+.reject-btn.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+/* Loading dots animation */
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.loading-dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite ease-in-out;
+}
+
+.loading-dots .dot:nth-child(1) {
+    animation-delay: -0.3s;
+}
+
+.loading-dots .dot:nth-child(2) {
+    animation-delay: -0.15s;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+}
+
+/* No applications message styling */
+.no-applications-message {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .application-card .btn-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .application-card .accept-btn,
+    .application-card .reject-btn {
+        width: 100%;
+    }
+}
