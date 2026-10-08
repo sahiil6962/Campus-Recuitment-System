@@ -2,7 +2,7 @@
 
 A full-stack web application designed to simplify and digitize the campus recruitment process for students, recruiters, and administrators.
 
-The system provides a centralized platform where students can manage their profiles and applications, recruiters can post and manage job opportunities, and administrators can oversee the complete recruitment process.
+The system provides a centralized platform where students can manage their profiles and applications, recruiters can post and manage job opportunities, and administrators can oversee the complete recruitment process. 
 
 ---
 
